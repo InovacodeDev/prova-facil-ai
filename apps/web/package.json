@@ -1,0 +1,10 @@
+{
+    "name": "@prova-facil-ai/web",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "echo 'build web'",
+        "lint": "echo 'lint web'",
+        "dev": "echo 'dev web'"
+    }
+}

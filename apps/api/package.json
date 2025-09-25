@@ -1,0 +1,10 @@
+{
+    "name": "@prova-facil-ai/api",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "echo 'build api'",
+        "lint": "echo 'lint api'",
+        "dev": "echo 'dev api'"
+    }
+}

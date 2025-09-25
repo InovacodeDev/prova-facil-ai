@@ -1,0 +1,10 @@
+{
+    "name": "@prova-facil-ai/db",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "echo 'build db'",
+        "lint": "echo 'lint db'",
+        "dev": "echo 'dev db'"
+    }
+}

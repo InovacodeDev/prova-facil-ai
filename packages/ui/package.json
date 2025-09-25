@@ -1,0 +1,10 @@
+{
+    "name": "@prova-facil-ai/ui",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "echo 'build ui'",
+        "lint": "echo 'lint ui'",
+        "dev": "echo 'dev ui'"
+    }
+}
