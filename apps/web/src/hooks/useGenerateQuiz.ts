@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "@tanstack/react-router";
 
 interface GenerateQuizParams {
     sourceType: "text" | "file";
@@ -14,6 +15,8 @@ interface QuizResponse {
 }
 
 export function useGenerateQuiz() {
+    const navigate = useNavigate();
+
     return useMutation<QuizResponse, Error, GenerateQuizParams>({
         mutationFn: async ({ sourceType, content }) => {
             const response = await fetch("/api/quizzes", {
@@ -35,9 +38,11 @@ export function useGenerateQuiz() {
             return response.json();
         },
         onSuccess: (data) => {
-            // TODO: Navigate to results page with data
-            console.log("Quiz generated:", data);
-            alert("Quiz generated successfully! Check console for data.");
+            // Navigate to results page with data as search params
+            navigate({
+                to: "/results",
+                search: { quiz: JSON.stringify(data) },
+            });
         },
     });
 }
