@@ -2,9 +2,19 @@
     "name": "@prova-facil-ai/db",
     "version": "1.0.0",
     "private": true,
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "build": "echo 'build db'",
+        "build": "tsc",
         "lint": "echo 'lint db'",
         "dev": "echo 'dev db'"
+    },
+    "dependencies": {
+        "drizzle-kit": "^0.31.4",
+        "drizzle-orm": "^0.44.5",
+        "pg": "^8.16.3"
+    },
+    "devDependencies": {
+        "typescript": "^5.9.2"
     }
 }

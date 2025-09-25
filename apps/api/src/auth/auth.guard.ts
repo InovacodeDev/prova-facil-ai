@@ -1,7 +1,10 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
+import { UserService } from "../user/user.service";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+    constructor(private userService: UserService) {}
+
     async canActivate(context: ExecutionContext): Promise<boolean> {
         const request = context.switchToHttp().getRequest();
         const authHeader = request.headers.authorization;
@@ -20,6 +23,9 @@ export class AuthGuard implements CanActivate {
 
         // Placeholder
         request.user = { id: "placeholder-user-id" };
+
+        // Sync user
+        await this.userService.syncUser(request.user.id);
 
         return true;
     }
