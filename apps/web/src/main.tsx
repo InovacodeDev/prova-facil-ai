@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createRouter, createRoute, createRootRoute, RouterProvider } from "@tanstack/react-router";
+import "./index.css";
 
 const rootRoute = createRootRoute();
 
